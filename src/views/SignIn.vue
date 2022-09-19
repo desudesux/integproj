@@ -16,9 +16,11 @@
             <v-card class="ma-15"
     max-width="500"
     max-height="1000"
+    
     color="#FFFFD1">
                 <v-card-text>
                     <center>
+                        <img alt="Profile" class="center" src="https://i.postimg.cc/pTvDsCkH/97790603.jpg" width="450" height="200" />
                     <v-card-title><h2>Sign In</h2></v-card-title></center>
                     <v-text-field
                         v-model="email"
@@ -36,11 +38,13 @@
                         required
                     ></v-text-field>
                 </v-card-text>
+                
                 <v-card-actions class="vcardaction">
+                    
                     <v-btn type="text" rounded color="#FFFFD1" class="btn" @click="signin">Sign In</v-btn>
                     
                 </v-card-actions>
-                <center><p>Need an Account?<router-link to="/Register">Register</router-link></p></center>
+                <center><p>Need an Account? Click<router-link  style="text-decoration: none; color: inherit;" to="/Register">  Register</router-link></p></center>
             </v-card>
         </v-col>
     </v-row>

@@ -16,7 +16,9 @@
     max-height="1000"
     color="#FFFFD1">
                 <v-card-text>
+                   
                     <center>
+                        <img alt="Profile" class="center" src="https://i.postimg.cc/pTvDsCkH/97790603.jpg" width="450" height="200" />
                     <v-card-title><h2>Register</h2></v-card-title></center>
                     <v-text-field
                         v-model="email"
