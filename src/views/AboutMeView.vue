@@ -43,7 +43,7 @@
           
      }
      .ma-15{
-          background-color: #FFFFD1;
+          background-color: #000000;
      }
      .center {
        display: block;

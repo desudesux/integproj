@@ -4,7 +4,7 @@
     <body>
       <v-row class="vrow">
         <v-col cols="5" sm="10" md="8" lg="6">
-          <v-card ref="form" class="ma-15" max-width="700" max-height="800" style="background-color:rgba(19,62,124, 0.75)">
+          <v-card ref="form" class="ma-15" max-width="700" max-height="800" style="background-color:rgba(126, 68, 20, 0.50)">
             <v-card-text>
               <section class="quiz" v-if="!squiz">
 
@@ -39,10 +39,12 @@
                 <section v-else>
                   <h1 id="quizresult">Quiz Result:</h1>
                   <v-card-text v-if="!pass">
+                    <img alt="Profile" class="center" src="https://i.postimg.cc/RFdWyRcd/anime-its-happening.gif" width="630" height="300" />
                     <h1 id="quizfailed">{{result}}</h1>
                     <p id="quizfailed">{{score}}/{{questions.length}}</p>
                   </v-card-text>
                   <v-card-text v-else>
+                    <img alt="Profile" class="center" src="https://i.postimg.cc/RFg0X0Bb/959.gif"  width="630" height="300" />
                     <h1 id="quizpassed">{{result}}</h1>
                     <p id="quizpassed">{{score}}/{{questions.length}}</p>
                   </v-card-text>
