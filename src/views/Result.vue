@@ -21,7 +21,7 @@
           </thead>
           <tbody class="tbody">
             
-            <tr v-for="quiz in projects " :key="quiz">
+            <tr v-for="quiz in quiz " :key="quiz">
               <td>{{quiz.user }}</td>
               <td>{{ quiz.scores }}</td>
 
@@ -48,7 +48,7 @@ export default {
   data() {
     return {
 
-      projects: [],
+      quiz: [],
 
 
     };
@@ -60,13 +60,13 @@ export default {
 
     async fetchLeaderBoards() {
 
-      const dbfileref = collection(db, "data");
+      const dbfileref = collection(db, "quiz");
       const q = query(dbfileref, orderBy("scores","desc"));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         console.log(doc.data())
-        this.projects.push(doc.data());
-        console.log(this.projects);
+        this.quiz.push(doc.data());
+        console.log(this.quiz);
       });
 
     },
