@@ -6,11 +6,15 @@
         <v-col cols="5" sm="10" md="8" lg="6">
           <v-card ref="form" class="ma-15" max-width="700" max-height="800" style="background-color:rgba(126, 68, 20, 0.50)">
             <v-card-text>
+              <h5>Score: {{score}}/{{questions.length}}</h5>
+                  <!-- div#correctAnswers -->
+                  <h5>Question: {{questionCurrentNumber}}/{{questions.length}}</h5>
               <section class="quiz" v-if="!squiz">
 
                 <center>
                   <h1 id="headline">Entertaiment: Japanese Anime & Manga</h1>
                 </center>
+                
                 <img id="logo-crown" src="https://i.postimg.cc/261LVnYk/5ABE.gif" class="height:10px;width:10px;"
                   alt="Quiz" />
                 <v-card-text class="startquizcard">
@@ -24,9 +28,7 @@
                   <center>
                     <h1 id="headline">Entertaiment: Japanese Anime & Manga</h1>
                   </center>
-                  <h5>Score: {{score}}/{{questions.length}}</h5>
-                  <!-- div#correctAnswers -->
-                  <h5>Question: {{questionCurrentNumber}}/{{questions.length}}</h5>
+                  
                   <span>
                     <h1 v-html="loading ? 'Loading...' : currentQuestion.question"></h1>
                     <form v-if="currentQuestion">
