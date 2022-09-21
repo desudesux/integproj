@@ -10,6 +10,8 @@ import AboutVuetify from '../views/AboutVuetify.vue'
 import AboutProject from '../views/AboutProject.vue'
 import Register from '../views/Register.vue'
 import SignIn from '../views/SignIn.vue'
+import Result from '../views/Result.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -73,14 +75,22 @@ const router = createRouter({
       name: 'register',
       component: Register
     },              
-    {
+     {
       path: '/home',
       name: 'home',
       component: HomeView,
       meta:{
         requiresAuth: true,
       },
-    },    
+    }, 
+    {
+      path: '/result',
+      name: 'result',
+      component: Result,
+      meta:{
+        requiresAuth: true,
+      },
+    },  
   ]
 })
 const getCurrentUser = () => {

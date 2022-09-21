@@ -11,7 +11,7 @@
                 <center>
                   <h1 id="headline">Entertaiment: Japanese Anime & Manga</h1>
                 </center>
-                <img id="logo-crown" src="https://i.postimg.cc/9FJX3ZKd/pngwing-com.png" class="height:10px;width:10px;"
+                <img id="logo-crown" src="https://i.postimg.cc/261LVnYk/5ABE.gif" class="height:10px;width:10px;"
                   alt="Quiz" />
                 <v-card-text class="startquizcard">
                   <v-btn class="btn" depressed outlined color="teal" @click="startQuiz">Start</v-btn>
@@ -19,7 +19,7 @@
               </section>
               <section v-else>
                 <section class="quiz" v-if="!quizCompleted">
-                  <img id="logo-crown" src="https://i.postimg.cc/8P8X1YQD/pngkey-com-no-game-no-life-3346073.png"
+                  <img id="logo-crown" src="https://i.postimg.cc/FRxPPtqC/bracket-anime.gif"
                     class="height:10px;width:10px;" alt="Quiz" />
                   <center>
                     <h1 id="headline">Entertaiment: Japanese Anime & Manga</h1>
@@ -166,9 +166,12 @@ export default {
           );
         }
         if (question.userAnswer === question.correct_answer) {
+
           /* Set class on Button if user answered right, to celebrate right answer with animation joyfulButton */
           event.target.classList.add("rightAnswer");
+          
           /* Set rightAnswer on question to true, computed property can track a streak out of 10 questions */
+          
           this.questions[index].rightAnswer = true;
           this.score++;
         } else {
@@ -189,18 +192,7 @@ export default {
           this.questionCurrentNumber++;
         }
         else {
-          this.quizCompleted = true
-
-          const auth = getAuth();
-          const project = {
-            user: auth.currentUser.email,
-            remarks: this.result,
-            scores: this.score,
-            timestamp: new Date(),
-          }
-          db.collection('projects').add(project).then(() => {
-            console.log("Added")
-          })
+          
           if (this.quizCompleted = true) {
             this.passingScore = (0.5 * this.questions.length);
             if (this.score >= this.passingScore) {
@@ -210,7 +202,20 @@ export default {
             else {
               this.result = "Failed"
             }
+            this.quizCompleted = true
+
+          const auth = getAuth();
+          const project = {
+            user: auth.currentUser.email,
+            remarks: this.result,
+            scores: this.score,
+            timestamp: new Date(),
           }
+          db.collection('quiz').add(project).then(() => {
+            console.log("Added")
+          })
+          }
+          
         }
 
       }
@@ -258,7 +263,7 @@ export default {
 #quizfailed {
   font-size: 1.7rem;
   padding: 0.5rem;
-  color: #fc0000;
+  color: #e7e7e7;
   text-align: center;
   border: 1px;
 }
@@ -272,7 +277,8 @@ export default {
 
 #logo-crown {
   display: block;
-  width: 40%;
+  width: 70%;
+  height: 10%;
   margin: 0 auto;
 }
 
